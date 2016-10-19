@@ -14,3 +14,9 @@ Simply copy the code, create a webserver and run this as a website or web app.
 URL format:
 
 http://[YOUR_SERVER_NAME]?site_id=[SITE_ID]
+
+Note: This is the TEST version of the code, intended for staging only. When moving this code into production, these changes need to be made:
+
+1. Webservice URLs need to be changed in web-form/services.js
+2. basePath needs to be set in web-form/controller.js
+3. Debugging log messages need to be removed
