@@ -19,4 +19,5 @@ Note: This is the TEST version of the code, intended for staging only. When movi
 
 1. Webservice URLs need to be changed in web-form/services.js
 2. basePath needs to be set in web-form/controller.js
-3. Debugging log messages need to be removed
+3. Username needs to be changed in the template file (it is static right now, needs to be fed from an upcoming webservice)
+4. Debugging log messages need to be removed
