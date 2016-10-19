@@ -1,0 +1,556 @@
+/* BADM WEB FORM STYLES */
+/* HELPER CLASSES */
+/* line 6, ../sass/badm-web-form.scss */
+.w-15 {
+  width: 15%;
+}
+
+/* line 10, ../sass/badm-web-form.scss */
+.w-20 {
+  width: 20%;
+}
+
+/* line 14, ../sass/badm-web-form.scss */
+.w-25 {
+  width: 25%;
+}
+
+/* line 18, ../sass/badm-web-form.scss */
+.w-50 {
+  width: 50%;
+}
+
+/* line 22, ../sass/badm-web-form.scss */
+.w-65 {
+  width: 65%;
+}
+
+/* line 26, ../sass/badm-web-form.scss */
+.w-75 {
+  width: 75%;
+}
+
+/* line 30, ../sass/badm-web-form.scss */
+.w-100 {
+  width: 100%;
+}
+
+/* line 34, ../sass/badm-web-form.scss */
+.d-iblock {
+  display: inline-block;
+}
+
+/* line 38, ../sass/badm-web-form.scss */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* line 42, ../sass/badm-web-form.scss */
+.pointer {
+  cursor: pointer;
+}
+
+/* line 46, ../sass/badm-web-form.scss */
+.disabled {
+  cursor: not-allowed;
+}
+
+/* line 51, ../sass/badm-web-form.scss */
+.no-underline {
+  text-decoration: none !important;
+}
+/* line 54, ../sass/badm-web-form.scss */
+.no-underline:hover {
+  text-decoration: none !important;
+}
+
+/* line 59, ../sass/badm-web-form.scss */
+.required {
+  color: red;
+  position: relative;
+  top: 7px;
+  left: 5px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* PAGE STYLES */
+/* line 71, ../sass/badm-web-form.scss */
+.article-header {
+  height: 40px;
+}
+
+/* line 75, ../sass/badm-web-form.scss */
+div.tooltip-inner {
+  max-width: 400px;
+  text-align: left;
+  background-color: white;
+  color: #323232;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px #ccc;
+  font-weight: 400;
+}
+/* line 84, ../sass/badm-web-form.scss */
+div.tooltip-inner p {
+  margin-bottom: 0;
+}
+
+/* line 89, ../sass/badm-web-form.scss */
+.tooltip div.tooltip-arrow {
+  border-right-color: #ccc !important;
+}
+
+/* line 93, ../sass/badm-web-form.scss */
+.popover {
+  max-width: 600px !important;
+}
+/* line 96, ../sass/badm-web-form.scss */
+.popover .arrow::after {
+  border-right-color: #f7f7f7 !important;
+}
+/* line 100, ../sass/badm-web-form.scss */
+.popover .popover-title {
+  max-width: 600px !important;
+}
+/* line 103, ../sass/badm-web-form.scss */
+.popover .popover-title p {
+  margin-bottom: 0;
+}
+/* line 108, ../sass/badm-web-form.scss */
+.popover .popover-content {
+  display: none;
+}
+
+/* line 114, ../sass/badm-web-form.scss */
+.overlay-container .overlay {
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 100%;
+  z-index: 10;
+  background-color: #fff;
+}
+/* line 122, ../sass/badm-web-form.scss */
+.overlay-container .overlay .spinner {
+  position: relative;
+  display: block;
+  margin: 100px auto 0;
+  z-index: 25;
+}
+
+/* line 131, ../sass/badm-web-form.scss */
+.modal-dialog {
+  margin: 10% auto 0 !important;
+}
+/* line 134, ../sass/badm-web-form.scss */
+.modal-dialog .modal-header {
+  border-radius: 3px;
+}
+/* line 138, ../sass/badm-web-form.scss */
+.modal-dialog .modal-footer {
+  margin-top: 0;
+}
+/* line 142, ../sass/badm-web-form.scss */
+.modal-dialog .modal-body {
+  max-height: 400px;
+  overflow: scroll;
+}
+/* line 149, ../sass/badm-web-form.scss */
+.modal-dialog .modal-content .restore-btn {
+  float: right;
+  text-align: right;
+}
+
+/* line 156, ../sass/badm-web-form.scss */
+.page-title.entry-title {
+  width: 100%;
+  float: left;
+  display: block;
+}
+
+/* line 162, ../sass/badm-web-form.scss */
+#main {
+  width: 100% !important;
+  border-right: none !important;
+}
+
+/* line 167, ../sass/badm-web-form.scss */
+.ui-datepicker-month, .ui-datepicker-year {
+  color: #484848;
+  font-weight: 400;
+}
+
+/* line 172, ../sass/badm-web-form.scss */
+.add-element-btn {
+  background-color: #5bbfdf;
+  color: #fff;
+}
+/* line 177, ../sass/badm-web-form.scss */
+.add-element-btn:hover {
+  background-color: #238fb1;
+}
+/* line 181, ../sass/badm-web-form.scss */
+.add-element-btn.disabled {
+  pointer-events: inherit !important;
+}
+
+/* line 186, ../sass/badm-web-form.scss */
+.str-badm-web-form {
+  margin-top: 20px;
+  /* collapsible section */
+}
+/* line 190, ../sass/badm-web-form.scss */
+.str-badm-web-form .required {
+  left: 2px;
+}
+/* line 197, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header {
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+/* line 202, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header > div {
+  display: inline-block;
+}
+/* line 205, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header > div:nth-child(1) {
+  width: 24%;
+}
+/* line 209, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header > div:nth-child(2) {
+  width: 40%;
+}
+/* line 213, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header > div:nth-child(3) {
+  width: 34%;
+  text-align: right;
+  cursor: pointer;
+}
+/* line 218, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header > div:nth-child(3) a, .str-badm-web-form .collapsible-section header > div:nth-child(3) span {
+  text-decoration: none !important;
+}
+/* line 222, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header > div:nth-child(3) .show-existing-number:hover {
+  text-decoration: none !important;
+}
+/* line 228, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header h3 {
+  font-size: 18px;
+  text-decoration: none;
+  color: #333;
+}
+/* line 233, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header h3:hover {
+  text-decoration: none;
+}
+/* line 237, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header h3 .toggle-btn {
+  -ms-transform: rotate(180deg) scale(1.3, 0.95);
+  /* IE 9 */
+  -webkit-transform: rotate(180deg) scale(1.3, 0.95);
+  /* Chrome, Safari, Opera */
+  transform: rotate(180deg) scale(1.3, 0.95);
+  top: 4px;
+  vertical-align: middle;
+  position: relative;
+  color: #666;
+  transition: transform 0.25s ease-in;
+}
+/* line 247, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header h3 .toggle-btn.up {
+  transform: scale(1.3, 0.95);
+  -moz-transform: scale(1.3, 0.95);
+  -ms-tranform: scale(1.3, 0.95);
+}
+/* line 257, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header button {
+  line-height: 30px;
+  font-size: 15px;
+}
+/* line 261, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header button[disabled] {
+  color: #888 !important;
+  background-color: #ccc !important;
+}
+/* line 266, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section header button i {
+  font-size: 18px;
+  margin-right: 2px;
+}
+/* line 273, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .show-deleted {
+  color: #458ea5;
+}
+/* line 277, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section {
+  padding: 2px 2px 4px;
+  border: 1px solid #ccc;
+  margin: 0 8px 12px 0;
+  width: 350px;
+  vertical-align: top;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px #dedede;
+  background-color: #fafafa;
+}
+/* line 289, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.only-one {
+  width: 100%;
+}
+/* line 293, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.edit {
+  width: 100%;
+  overflow: visible;
+}
+/* line 298, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.edit > div textarea {
+  height: auto;
+}
+/* line 303, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.edit .display-text, .str-badm-web-form .collapsible-section .content-section.edit select, .str-badm-web-form .collapsible-section .content-section.edit input, .str-badm-web-form .collapsible-section .content-section.edit textarea {
+  float: left;
+}
+/* line 307, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.edit .input-wrapper {
+  display: inline-block;
+  width: 75%;
+}
+/* line 312, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.edit .null-holder {
+  display: none;
+}
+/* line 318, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity {
+  display: inline-block;
+  /*&::before {
+  	display: block;
+      position: absolute;
+      width: 100%;
+      height: 60px;
+      bottom: 0px;
+      content: "";
+      background: linear-gradient(rgba(250,250,250,0), rgba(250,250,250,0.8), rgba(250,250,250, 1));
+      z-index: 20;
+  }*/
+}
+/* line 334, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .input-wrapper {
+  display: block;
+  width: 100%;
+}
+/* line 339, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar {
+  margin: 0;
+}
+/* line 342, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar.bottom-bar {
+  display: none;
+}
+/* line 346, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .save-entity-btn, .str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .cancel-changes-btn, .str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .clear-entity-btn {
+  display: none;
+}
+/* line 350, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .edit-entity-btn, .str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .del-entity-btn, .str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .history-btn {
+  display: inline-block;
+  color: #888;
+  font-size: 16px;
+  padding: 4px;
+}
+/* line 356, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .edit-entity-btn:hover, .str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .del-entity-btn:hover, .str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .history-btn:hover {
+  color: #484848;
+}
+/* line 360, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .edit-entity-btn.disabled, .str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .del-entity-btn.disabled, .str-badm-web-form .collapsible-section .content-section.saved-entity .button-bar .history-btn.disabled {
+  color: #b2b2b2;
+}
+/* line 371, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .tooltips {
+  display: none;
+  cursor: pointer;
+}
+/* line 376, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .display-text {
+  margin-right: 20px;
+  width: auto;
+}
+/* line 382, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .value-holder {
+  display: block;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: hidden;
+  max-height: 250px;
+}
+/* line 390, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .required, .str-badm-web-form .collapsible-section .content-section.saved-entity .unit {
+  display: none;
+}
+/* line 394, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .show-desc {
+  display: none;
+}
+/* line 398, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity select, .str-badm-web-form .collapsible-section .content-section.saved-entity textarea, .str-badm-web-form .collapsible-section .content-section.saved-entity input {
+  display: none;
+}
+/* line 402, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section.saved-entity .input-group {
+  margin: 4px;
+  overflow: visible;
+  					/*display: none;
+  
+  					&:first-child {
+  						height: 28px;
+  				    	overflow-y: hidden;
+  				    	display: inline-block;
+  					}*/
+}
+/* line 415, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div {
+  padding: 1px 5px;
+  margin: 7px 0;
+}
+/* line 419, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div.input-group {
+  width: 100%;
+}
+/* line 424, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div.disabled span {
+  color: #aaa;
+}
+/* line 429, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div span {
+  display: inline-block;
+}
+/* line 431, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div span.display-text {
+  width: 25%;
+  font-weight: bold;
+}
+/* line 435, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div span.display-text .tooltips {
+  font-size: 20px;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+/* line 441, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div span.display-text .required {
+  vertical-align: super;
+  top: 2px;
+  left: 0px;
+}
+/* line 455, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div .show-desc {
+  position: relative;
+  color: #238fb1;
+}
+/* line 460, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div .show-desc:hover {
+  color: #1a6c87;
+}
+/* line 465, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div select {
+  background-color: #eee;
+  height: 32px;
+}
+/* line 470, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div textarea {
+  height: 36px;
+  max-height: 200px;
+}
+/* line 475, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div select, .str-badm-web-form .collapsible-section .content-section > div textarea, .str-badm-web-form .collapsible-section .content-section > div input {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 484, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div .w-24 {
+  width: 24%;
+}
+/* line 487, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div .w-24:nth-of-type(1) {
+  margin-right: 8px;
+}
+/* line 492, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div .value-holder {
+  display: none;
+}
+/* line 496, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div .required-msg {
+  display: none;
+  margin: 8px 0 0;
+}
+/* line 500, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section > div .required-msg span {
+  margin-left: 0;
+}
+/* line 508, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section .pending-label {
+  color: #888;
+  display: inline-block;
+  margin: 2px 0;
+}
+/* line 514, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section .button-bar {
+  text-align: right;
+}
+/* line 517, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section .button-bar button {
+  font-size: 12px;
+  padding: 4px;
+  width: 15%;
+}
+/* line 524, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section .button-bar .edit-entity-btn, .str-badm-web-form .collapsible-section .content-section .button-bar .clear-entitty-btn, .str-badm-web-form .collapsible-section .content-section .button-bar .del-entity-btn {
+  display: none;
+}
+/* line 528, ../sass/badm-web-form.scss */
+.str-badm-web-form .collapsible-section .content-section .button-bar .save-entity-btn, .str-badm-web-form .collapsible-section .content-section .button-bar .cancel-changes-btn {
+  display: inline-block;
+}
+/* line 538, ../sass/badm-web-form.scss */
+.str-badm-web-form .submit-form {
+  padding: 20px 10px 0;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 900px) {
+  /* line 547, ../sass/badm-web-form.scss */
+  .str-badm-web-form {
+    /* collapsible section */
+  }
+  /* line 552, ../sass/badm-web-form.scss */
+  .str-badm-web-form .collapsible-section .content-section.edit .display-text, .str-badm-web-form .collapsible-section .content-section.edit select, .str-badm-web-form .collapsible-section .content-section.edit input, .str-badm-web-form .collapsible-section .content-section.edit textarea {
+    display: block;
+    width: 100%;
+  }
+  /* line 557, ../sass/badm-web-form.scss */
+  .str-badm-web-form .collapsible-section .content-section.edit .input-wrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* line 568, ../sass/badm-web-form.scss */
+  .str-badm-web-form {
+    /* collapsible section */
+  }
+  /* line 571, ../sass/badm-web-form.scss */
+  .str-badm-web-form .collapsible-section .content-section {
+    width: 100%;
+  }
+  /* line 575, ../sass/badm-web-form.scss */
+  .str-badm-web-form .collapsible-section .content-section .required-msg .w-25 {
+    width: 0;
+  }
+  /* line 581, ../sass/badm-web-form.scss */
+  .str-badm-web-form .collapsible-section .content-section .button-bar button {
+    width: 25%;
+  }
+}

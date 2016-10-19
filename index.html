@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="js/jquery.flexibleArea.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.js"></script>
+    <script type="text/javascript" src="js/angular-resource.js"></script>
+    <script type="text/javascript" src="web-form/services.js"></script>
+    <script type="text/javascript" src="web-form/controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/badm-web-form.css">
+    <link rel="stylesheet" type="text/css" href="fa/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/flexible-textarea.js"></script>
+  </head>
+  <body>
+    <div class="overlay-container">
+      <div class="overlay js-overlay">
+        <img class="spinner" src="/img/482_blk.gif">
+      </div>
+    </div>
+    <div id="main" class="col-md-12 clearfix" role="main" ng-app="webFormApp">
+
+    <!-- UNCOMMENT FOR BREADCRUMBS
+
+    <!--[if lt IE 10]>
+      <p><b class="danger">Error: </b>Your web browser is not supported by this page. Please upgrade to a modern browser.</p>
+    <![endif]-->
+      <div class="hide">{{userId = "meghasandesh"}}</div>
+      <article class="js-article hide" ng-controller="WebFormCtrl"> 
+        <header class="page-head article-header">
+          <div>
+            <h1 ng-if="siteInfo && template" class="page-title entry-title" itemprop="headline">{{getPageTitle()}}</h1>
+            <h1 ng-hide="siteInfo && template">Site General Info Not Found</h1>
+          </div>
+        
+        </header> <!-- end article header -->
+
+        <section class="page-content entry-content clearfix" itemprop="articleBody">
+          <main ng-hide="siteInfo && template">
+            <p>Uh Oh. Something is missing.</p>
+
+            <p>Try double checking the URL to make sure you have specified a valid Site ID.</p>
+
+            <p>You can also try refreshing the page, or try again later</p>
+            
+            <p>For support, contact <a href="mailto:ameriflux-support@lbl.gov" target="_blank">ameriflux-support@lbl.gov</a></p>
+          </main>
+          <main class="str-badm-web-form js-web-form" ng-if="siteInfo">
+            <h3 class="js-site-id"></h3>
+            <h3 class="js-site-name"></h3>
+            <p>
+              <sup class="required">*</sup>&nbsp;&nbsp; <i>indicates required field</i>
+              <br>
+              <i class="fa fa-question-circle js-tooltip tooltips"></i>&nbsp; <i>get more information</i>
+              <!--br>
+              <b>(description of options)</b> <i>get more information about available options</i-->
+            </p>
+            <div class="js-form-content-section" ng-repeat="(groupName, group) in template.groups">
+              <section class="collapsible-section js-collapsible-section" ng-if="groupName != 'GRP_HEADER'" data-group="{{groupName}}">
+                <header class="js-collapse-toggle">
+                  <h3 class="section-title capitalize js-toggle-group pointer" ng-click="toggleEntities()">
+                    {{ getNiceName(groupName, 'groupName') }}
+                    <i class="fa fa-angle-down pull-right toggle-btn js-toggle-btn" aria-hidden="true"></i>
+                  </h3>
+                  
+                </header>
+                <p class="text-right js-add-entry">
+                    <button class="js-add-element add-element-btn btn" ng-click="addEntity($event)" ng-if="toggleButton(group, groupName)">
+                      <i class="fa fa-plus-circle"></i>
+                      Add New Entry
+                    </button>
+                </p>
+                <p class="text-right pointer show-deleted js-show-deleted" ng-click="showDeletedEntries(groupName)" ng-if="deletedList.values[groupName]">Show Recently Deleted Entries</p>
+                <div class="js-content-section js-group-template hidden content-section" data-param="{{groupName}}" ng-click="showWarning()">
+                  <div class="pending-label js-pending-label hide">pending QA/QC review</div>
+                  <div class="js-button-bar button-bar pull-right">
+                    <!--a ng-click="viewHistory($event)" class="js-history-btn history-btn pointer"><i class="fa fa-clock-o"></i></a-->
+                    <a ng-click="editEntity($event)" class="js-edit-entity-btn edit-entity-btn pointer"><i class="fa fa-pencil"></i></a>
+                    <a ng-click="initDeleteEntity($event)" class="js-del-entity-btn del-entity-btn pointer"><i class="fa fa-trash"></i></a>
+                  </div>
+                  <div ng-repeat="(param, paramObj) in group" class="js-input-group input-group {{param}} {{paramObj.keep_value == 'OnlyOne' ? 'js-only-one' : ''}} {{ (paramObj.required == 'p' || paramObj.required == 'r') ? 'req-field' : 'nreq-field' }}">
+                      <span class="js-display-text display-text">{{getNiceName(param, 'paramName')}}<sup ng-if="paramObj.required == 'p' || paramObj.required == 'r'" class="required">*</sup>&nbsp;&nbsp;<i class="fa fa-question-circle js-tooltip tooltips" data-placement="right" role="button" data-toggle="popover" tabindex="0" data-trigger="focus" title="{{ '<p><b><i>' + paramObj.description + '</i></b></p>' + (paramObj.explanation ? '<p>' + paramObj.explanation + '</p>' : '')}}"></i><br>
+                      </span>
+                    
+                      <div class="input-wrapper">
+                        <textarea ng-if="paramObj.datatype == 'TEXT' && paramObj.hasCV == null" data-type="{{paramObj.datatype}}" class="w-100 {{param}} {{ paramObj.required == 's' ? 'js-secondary' : ''}}" placeholder="{{getNiceName(param, 'paramName')}}" maxlength="{{ (paramObj.stringSize * 1) > 0 ? (paramObj.stringSize * 1) : '' }}" data-param="{{param}}" data-req="{{ (paramObj.required == 'p' || paramObj.required == 'r') ? 'true' : '' }}" ng-model="value"></textarea>
+
+                        <select class="w-100 {{param}} {{ paramObj.required == 's' ? 'js-secondary' : ''}}" ng-if="paramObj.hasCV != null" data-param="{{param}}" data-type="{{paramObj.datatype}}" data-req="{{ (paramObj.required == 'p' || paramObj.required == 'r') ? 'true' : '' }}">
+                        {{getCV(paramObj.hasCV, param, paramObj.required)}}
+                        </select>
+
+                        <input type="text" ng-click="initDatepicker()" class="{{param}} w-100 {{paramObj.datatype}} {{ paramObj.required == 's' ? 'js-secondary' : ''}}" ng-if="paramObj.datatype == 'DATE' || paramObj.datatype == 'REAL' || paramObj.datatype == 'INTEGER'" placeholder="{{getNiceName(param, 'paramName')}}" data-param="{{param}}" data-req="{{ (paramObj.required == 'p' || paramObj.required == 'r') ? 'true' : '' }}" maxlength="{{ (paramObj.stringSize * 1) > 0 ? (paramObj.stringSize * 1) : '' }}" ng-model="value">
+
+                        <span class="unit" ng-if="paramObj.units != 'CV' && paramObj.units != 'free text' && paramObj.units != 'URL' && paramObj.datatype != 'DATE'">(Unit: {{paramObj.units}})</span><b ng-if="paramObj.hasCV" class="js-showCVDesc show-desc pointer" data-cv="{{paramObj.hasCV}}">(Description of options)</b>
+
+                        <div class="js-value-holder value-holder {{param}}">{{value}}</div>
+                      </div>
+                      
+                      <p class="js-req-msg required-msg bg-danger {{param}}"><span class="w-25"></span><b class="capitalize">{{getNiceName(param, 'paramName')}}</b> is required</p>
+                      <p class="js-error-msg error-msg bg-danger {{param}} hide"><span class="w-25"></span></p>
+                  </div>
+                  <div class="js-button-bar button-bar bottom-bar">
+                    <span class="w-25"></span>
+                    <button ng-click="saveEntity($event)" class="btn btn-xs btn-primary js-save-entity-btn save-entity-btn"><i class="fa fa-save"></i> Save</button>
+                    <button ng-click="clearChanges($event)" class="btn btn-xs btn-default js-cancel-changes-btn cancel-changes-btn">Cancel</button>
+                  </div>
+                </div>
+              </section>
+            </div>
+            
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="delete-modal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header bg-warning">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Warning</h3>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure you want to delete this <b class="js-data-param"></b> entry?</p>
+                    <p class="entry js-entry">
+
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="deleteEntity()" data-dismiss="modal">Yes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="history-modal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title js-title">History for <span class="js-grp"></span></h3>
+                  </div>
+                  <div class="modal-body">
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
