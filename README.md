@@ -13,4 +13,4 @@ Simply copy the code, create a webserver and run this as a website or web app.
 
 URL format:
 
-<server_name>?site_id=<SITE_ID>
+http://[YOUR_SERVER_NAME]?site_id=[SITE_ID]
